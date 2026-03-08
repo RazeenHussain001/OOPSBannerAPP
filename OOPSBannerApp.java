@@ -1,57 +1,74 @@
 /**
- * OOPS Banner App
- * UC6 - Static helper functions for characters
- * @author Guru
- * @version 1.5
+ * OOPSBannerApp
+ * UC7 - Character Pattern Inner Class
+ * @author Razeen
+ * @version 7.0
  */
-
 public class OOPSBannerApp {
 
     public static void main(String[] args) {
 
-        String[] o = getO();
-        String[] p = getP();
-        String[] s = getS();
+        CharacterPatternMap o = new CharacterPatternMap('O', new String[]{
+                "*****",
+                "*   *",
+                "*   *",
+                "*   *",
+                "*   *",
+                "*   *",
+                "*****"
+        });
 
-        // print row by row
-        for (int i = 0; i < o.length; i++) {
-            System.out.println(o[i] + "  " + o[i] + "  " + p[i] + "  " + s[i]);
+        CharacterPatternMap p = new CharacterPatternMap('P', new String[]{
+                "*****",
+                "*   *",
+                "*   *",
+                "*****",
+                "*",
+                "*",
+                "*"
+        });
+
+        CharacterPatternMap s = new CharacterPatternMap('S', new String[]{
+                "*****",
+                "*",
+                "*",
+                "*****",
+                "    *",
+                "    *",
+                "*****"
+        });
+
+        CharacterPatternMap[] word = {o, o, p, s};
+
+        for (int i = 0; i < 7; i++) {
+
+            StringBuilder line = new StringBuilder();
+
+            for (CharacterPatternMap cp : word) {
+                line.append(cp.getPattern()[i]).append(" ");
+            }
+
+            System.out.println(line.toString());
         }
     }
 
-    static String[] getO() {
-        return new String[]{
-                " ***** ",
-                "*     *",
-                "*     *",
-                "*     *",
-                "*     *",
-                "*     *",
-                " ***** "
-        };
-    }
+    // Static Inner Class
+    static class CharacterPatternMap {
 
-    static String[] getP() {
-        return new String[]{
-                " ***** ",
-                "*     *",
-                "*     *",
-                " ***** ",
-                "*      ",
-                "*      ",
-                "*      "
-        };
-    }
+        private char character;
+        private String[] pattern;
 
-    static String[] getS() {
-        return new String[]{
-                " ***** ",
-                "*      ",
-                "*      ",
-                " ***** ",
-                "      *",
-                "      *",
-                " ***** "
-        };
+        public CharacterPatternMap(char character, String[] pattern) {
+            this.character = character;
+            this.pattern = pattern;
+        }
+
+        public char getCharacter() {
+            return character;
+        }
+
+        public String[] getPattern() {
+            return pattern;
+        }
     }
 }
