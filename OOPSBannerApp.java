@@ -1,7 +1,7 @@
 /**
  * OOPS Banner App
  * UC6 - Static helper functions for characters
- * @author Guru
+ * @author Razeen
  * @version 1.5
  */
 
