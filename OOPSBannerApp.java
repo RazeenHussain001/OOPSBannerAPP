@@ -2,7 +2,7 @@
 /**
  * OOPS Banner App
  * UC4 - Banner using Array and Loop
- * @author Guru
+ * @author Razeen
  * @version 1.3
  */
 
