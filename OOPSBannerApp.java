@@ -2,7 +2,7 @@
 /**
  * OOPS Banner App
  * UC3 - Banner using String.join()
- * @author Guru
+ * @author Razeen
  * @version 1.2
  */
 
